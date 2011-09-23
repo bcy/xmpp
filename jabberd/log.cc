@@ -86,7 +86,7 @@ static inline int _debug_log_zonefilter(char const* zone) {
     char *pos, c = '\0';
     if(zone != NULL && debug__zones != NULL)
     {
-	pos = strchr(zone,'.');
+	pos = (char*)strchr(zone,'.');
         if(pos != NULL)
         {
             c = *pos;
