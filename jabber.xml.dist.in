@@ -617,14 +617,14 @@
       <!-- You can have multipe <ip/>-Elements to listen on multiple	-->
       <!-- ports or individual IP addresses.				-->
       <!-- See the additional examples, that are commented out.		-->
+      <!--
       <ip port="5222"/>
+      -->
 
       <!-- Listening only on the loopback address, if this is the only	-->
       <!-- configured address, your server will only accept connections	-->
       <!-- from clients resisting on the same host as the server.	-->
-      <!--
       <ip port="5222">127.0.0.1</ip>
-      -->
 
       <!-- On Linux: Listening on any IPv4 and IPv6 address of your	-->
       <!-- server. On BSD: Listening on any IPv6 address of your	-->
@@ -751,7 +751,7 @@
       <host name='b.example.com' xmpp='no'/>
       <host name='c.example.com' tls='256' auth='sasl'/>
       -->
-      <ip port="5269"/>
+      <ip port="5269">127.0.0.1</ip>
       <karma>
         <init>50</init>
         <max>50</max>
