@@ -14,6 +14,7 @@
 
 @SET_MAKE@
 
+user = `who am i | cut -d ' ' -f 1`
 srcdir = @srcdir@
 top_srcdir = @top_srcdir@
 VPATH = @srcdir@
@@ -282,6 +283,7 @@ uninstall-info-am:
 install-logDATA: $(log_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(logdir)" || $(mkdir_p) "$(DESTDIR)$(logdir)"
+	chown -R $(user) "$(DESTDIR)$(logdir)"
 	@list='$(log_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  f=$(am__strip_dir) \
@@ -299,6 +301,7 @@ uninstall-logDATA:
 install-runDATA: $(run_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(rundir)" || $(mkdir_p) "$(DESTDIR)$(rundir)"
+	chown -R $(user) "$(DESTDIR)$(rundir)"
 	@list='$(run_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  f=$(am__strip_dir) \
@@ -316,6 +319,7 @@ uninstall-runDATA:
 install-spoolDATA: $(spool_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(spooldir)" || $(mkdir_p) "$(DESTDIR)$(spooldir)"
+	chown -R $(user) "$(DESTDIR)$(spooldir)"
 	@list='$(spool_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  f=$(am__strip_dir) \
